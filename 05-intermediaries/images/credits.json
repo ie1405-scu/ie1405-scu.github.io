@@ -1,0 +1,12 @@
+{
+  "mdn-cache-types.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+  },
+  "kurose-web-cache.png": {
+    "artist": "Kurose & Ross, Chapter 2 slides",
+    "license": "author slides",
+    "page": "https://gaia.cs.umass.edu/kurose_ross/ppt.php"
+  }
+}

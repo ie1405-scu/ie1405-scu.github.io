@@ -1,0 +1,21 @@
+# خودآزمایی تمرین ۳ روی سرورهای GitHub. این فایل را در مخزن خودتان در .github/workflows/ex03-check.yml بگذارید.
+# با هر push در پوشهٔ ex03 (یا دستی از تب Actions) سایت زندهٔ شما را آزمایش می‌کند.
+name: ex03-check
+on:
+  push:
+    paths: ['ex03/**']
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: آزمون سایت زنده
+        working-directory: ex03
+        run: |
+          ID="${GITHUB_REPOSITORY#*/ie1405-}"
+          node check/check.mjs "https://cv.ie1405-$ID.workers.dev"

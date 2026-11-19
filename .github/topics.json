@@ -1,0 +1,361 @@
+{
+ "site": "https://ie1405-scu.github.io/",
+ "sessions": [
+  {
+   "n": 0,
+   "title": "اینترنت چطور به اینجا رسید؟"
+  },
+  {
+   "n": 1,
+   "title": "از URL تا سرور"
+  },
+  {
+   "n": 2,
+   "title": "یک تراکنش HTTP"
+  },
+  {
+   "n": 3,
+   "title": "state و هویت"
+  },
+  {
+   "n": 4,
+   "title": "زیربنای HTTP: اتصال و TLS"
+  },
+  {
+   "n": 5,
+   "title": "واسطه‌ها: cache و proxy و CDN"
+  },
+  {
+   "n": 6,
+   "title": "فراتر از request/response"
+  },
+  {
+   "n": 7,
+   "title": "وب، وقتی کاربرش agent است"
+  }
+ ],
+ "rules": [
+  "هر نفر در هر زمان فقط یک موضوع رزروشده دارد.",
+  "ارائه پس از جلسهٔ مرتبط انجام می‌شود و زمان آن را مدرس اعلام می‌کند.",
+  "هر ارائه یک سؤال محوری، یک دمو یا مشاهدهٔ واقعی، و یک تصمیم مهندسی دارد.",
+  "نمرهٔ ارائه ۰٫۷۵ تا ۱٫۵ از نمرهٔ فعالیت کلاسی است."
+ ],
+ "topics": [
+  {
+   "id": "dnssec",
+   "session": 1,
+   "title": "امضای DNS با DNSSEC",
+   "question": "زنجیرهٔ امضا از ریشه تا دامنه چگونه کار می‌کند، و چرا با وجود عمر طولانی کم استفاده می‌شود؟",
+   "sources": [
+    [
+     "RFC 4033",
+     "https://www.rfc-editor.org/rfc/rfc4033"
+    ],
+    [
+     "How DNSSEC works (Cloudflare)",
+     "https://www.cloudflare.com/learning/dns/dnssec/how-dnssec-works/"
+    ]
+   ]
+  },
+  {
+   "id": "bgp-rpki",
+   "session": 1,
+   "title": "مسیریابی BGP و RPKI",
+   "question": "چرا یک اعلان مسیر اشتباه می‌تواند یک سرویس جهانی را از دسترس خارج کند؟ نمونه: قطعی Facebook در ۲۰۲۱.",
+   "sources": [
+    [
+     "Facebook outage (Cloudflare)",
+     "https://blog.cloudflare.com/october-2021-facebook-outage/"
+    ],
+    [
+     "RFC 6480 (RPKI)",
+     "https://www.rfc-editor.org/rfc/rfc6480"
+    ]
+   ]
+  },
+  {
+   "id": "encrypted-dns",
+   "session": 1,
+   "title": "رمزگذاری DNS با DoH و DoT",
+   "question": "پرسش‌های DNS را چه کسی می‌بیند، و مدیر شبکه با رمزگذاری آن‌ها چه چیزی را از دست می‌دهد؟",
+   "sources": [
+    [
+     "RFC 8484 (DoH)",
+     "https://www.rfc-editor.org/rfc/rfc8484"
+    ],
+    [
+     "RFC 7858 (DoT)",
+     "https://www.rfc-editor.org/rfc/rfc7858"
+    ]
+   ]
+  },
+  {
+   "id": "happy-eyeballs",
+   "session": 1,
+   "title": "الگوریتم Happy Eyeballs",
+   "question": "مرورگر وقتی هم نشانی IPv4 دارد و هم IPv6، کدام را انتخاب می‌کند و چرا منتظر شکست یکی نمی‌ماند؟",
+   "sources": [
+    [
+     "RFC 8305",
+     "https://www.rfc-editor.org/rfc/rfc8305"
+    ]
+   ]
+  },
+  {
+   "id": "compression",
+   "session": 2,
+   "title": "فشرده‌سازی در HTTP",
+   "question": "مرورگر و سرور چگونه بر سر gzip و Brotli و zstd توافق می‌کنند، و چرا فشرده‌سازی در کنار رمزنگاری به حملهٔ BREACH راه داد؟",
+   "sources": [
+    [
+     "HTTP compression (MDN)",
+     "https://developer.mozilla.org/en-US/docs/Web/HTTP/Compression"
+    ],
+    [
+     "RFC 7932 (Brotli)",
+     "https://www.rfc-editor.org/rfc/rfc7932"
+    ],
+    [
+     "RFC 8878 (zstd)",
+     "https://www.rfc-editor.org/rfc/rfc8878"
+    ],
+    [
+     "BREACH",
+     "https://www.breachattack.com/"
+    ]
+   ]
+  },
+  {
+   "id": "grpc",
+   "session": 2,
+   "title": "پروتکل gRPC روی HTTP/2",
+   "question": "این پروتکل از stream و trailer در HTTP/2 چه استفاده‌ای می‌کند، و چرا مرورگر نمی‌تواند مستقیم با آن کار کند؟",
+   "sources": [
+    [
+     "gRPC over HTTP2",
+     "https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md"
+    ],
+    [
+     "Core concepts (grpc.io)",
+     "https://grpc.io/docs/what-is-grpc/core-concepts/"
+    ]
+   ]
+  },
+  {
+   "id": "csp",
+   "session": 3,
+   "title": "سیاست Content-Security-Policy",
+   "question": "یک header چگونه جلوی اجرای اسکریپت تزریق‌شده (XSS) را می‌گیرد، و nonce و strict-dynamic چه مشکلی را حل می‌کنند؟",
+   "sources": [
+    [
+     "CSP (MDN)",
+     "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
+    ],
+    [
+     "CSP Cheat Sheet (OWASP)",
+     "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+    ]
+   ]
+  },
+  {
+   "id": "fingerprinting",
+   "session": 3,
+   "title": "ردیابی بدون cookie",
+   "question": "سایت‌ها بدون cookie چگونه یک مرورگر را از میان میلیون‌ها مرورگر بازمی‌شناسند، و مرورگرها چه دفاعی دارند؟",
+   "sources": [
+    [
+     "Cover Your Tracks (EFF)",
+     "https://coveryourtracks.eff.org/"
+    ],
+    [
+     "Mitigating Browser Fingerprinting (W3C)",
+     "https://www.w3.org/TR/fingerprinting-guidance/"
+    ]
+   ]
+  },
+  {
+   "id": "local-network-access",
+   "session": 3,
+   "title": "دسترسی صفحه‌های وب به شبکهٔ محلی",
+   "question": "چرا صفحه‌ای در اینترنت نباید بتواند به مودم خانهٔ شما درخواست بفرستد، و مرورگرها چگونه جلوی آن را می‌گیرند؟",
+   "sources": [
+    [
+     "Local Network Access (WICG)",
+     "https://wicg.github.io/local-network-access/"
+    ],
+    [
+     "Intent to Ship (blink-dev)",
+     "https://groups.google.com/a/chromium.org/g/blink-dev/c/cwu_RUmBpzY"
+    ]
+   ]
+  },
+  {
+   "id": "revocation",
+   "session": 4,
+   "title": "ابطال گواهی",
+   "question": "اگر کلید خصوصی یک سایت لو برود، مرورگر از کجا می‌فهمد گواهی آن دیگر معتبر نیست؟ چرا Let's Encrypt کار با OCSP را کنار گذاشت؟",
+   "sources": [
+    [
+     "Ending OCSP (Let's Encrypt)",
+     "https://letsencrypt.org/2024/12/05/ending-ocsp/"
+    ],
+    [
+     "RFC 5280 (CRL)",
+     "https://www.rfc-editor.org/rfc/rfc5280"
+    ],
+    [
+     "RFC 6960 (OCSP)",
+     "https://www.rfc-editor.org/rfc/rfc6960"
+    ]
+   ]
+  },
+  {
+   "id": "acme",
+   "session": 4,
+   "title": "صدور خودکار گواهی با ACME",
+   "question": "یک CA چگونه بدون دخالت انسان مطمئن می‌شود دامنه مال شماست، و چالش‌های HTTP-01 و DNS-01 چه تفاوتی دارند؟",
+   "sources": [
+    [
+     "RFC 8555",
+     "https://www.rfc-editor.org/rfc/rfc8555"
+    ],
+    [
+     "Challenge types (Let's Encrypt)",
+     "https://letsencrypt.org/docs/challenge-types/"
+    ]
+   ]
+  },
+  {
+   "id": "post-quantum-tls",
+   "session": 4,
+   "title": "رمزنگاری پساکوانتومی در TLS",
+   "question": "تهدید «اکنون ذخیره کن، بعداً رمزگشایی کن» چیست، و چرا key exchange زودتر از امضای گواهی پساکوانتومی شد؟",
+   "sources": [
+    [
+     "FIPS 203 (ML-KEM)",
+     "https://csrc.nist.gov/pubs/fips/203/final"
+    ],
+    [
+     "Post-quantum (Cloudflare)",
+     "https://blog.cloudflare.com/pq-2024/"
+    ]
+   ]
+  },
+  {
+   "id": "service-worker",
+   "session": 5,
+   "title": "سازوکار Service Worker",
+   "question": "یک proxy درون خود مرورگر چگونه کار می‌کند، و چگونه برنامهٔ وب را بدون اینترنت قابل استفاده می‌کند؟",
+   "sources": [
+    [
+     "Service Worker API (MDN)",
+     "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+    ]
+   ]
+  },
+  {
+   "id": "video-streaming",
+   "session": 5,
+   "title": "پخش ویدیو با HLS و DASH",
+   "question": "پخش‌کنندهٔ ویدیو چگونه کیفیت را با سرعت شبکه تطبیق می‌دهد، و CDN در این کار چه نقشی دارد؟",
+   "sources": [
+    [
+     "Kurose & Ross §2.6",
+     "https://gaia.cs.umass.edu/kurose_ross/index.php"
+    ],
+    [
+     "RFC 8216 (HLS)",
+     "https://www.rfc-editor.org/rfc/rfc8216"
+    ]
+   ]
+  },
+  {
+   "id": "graphql-cache",
+   "session": 5,
+   "title": "زبان GraphQL و cache در HTTP",
+   "question": "وقتی همهٔ درخواست‌ها POST به یک endpoint است، cache در HTTP و CDN چه می‌شود و چه راه‌حل‌هایی وجود دارد؟",
+   "sources": [
+    [
+     "Caching (graphql.org)",
+     "https://graphql.org/learn/caching/"
+    ]
+   ]
+  },
+  {
+   "id": "web-push",
+   "session": 6,
+   "title": "اعلان‌های Web Push",
+   "question": "وقتی صفحه بسته است، پیام سرور چگونه به کاربر می‌رسد، و push service در این میان چه چیزی را می‌بیند؟",
+   "sources": [
+    [
+     "Push API (MDN)",
+     "https://developer.mozilla.org/en-US/docs/Web/API/Push_API"
+    ],
+    [
+     "RFC 8030",
+     "https://www.rfc-editor.org/rfc/rfc8030"
+    ],
+    [
+     "RFC 8292 (VAPID)",
+     "https://www.rfc-editor.org/rfc/rfc8292"
+    ]
+   ]
+  },
+  {
+   "id": "iot-protocols",
+   "session": 6,
+   "title": "پروتکل‌های اینترنت اشیا",
+   "question": "حسگری با باتری کوچک چرا HTTP را کنار می‌گذارد؟ MQTT و CoAP چه تفاوتی دارند و چرا CoAP روی UDP است؟",
+   "sources": [
+    [
+     "MQTT specification",
+     "https://mqtt.org/mqtt-specification/"
+    ],
+    [
+     "RFC 7252 (CoAP)",
+     "https://www.rfc-editor.org/rfc/rfc7252"
+    ]
+   ]
+  },
+  {
+   "id": "email-auth",
+   "session": null,
+   "title": "ایمیل و اعتبارسنجی فرستنده",
+   "question": "پروتکل SMTP فرستنده را بررسی نمی‌کند؛ SPF و DKIM و DMARC چگونه این کمبود را جبران می‌کنند، و چرا ایمیل جعلی هنوز ممکن است؟",
+   "sources": [
+    [
+     "Kurose & Ross §2.3",
+     "https://gaia.cs.umass.edu/kurose_ross/index.php"
+    ],
+    [
+     "RFC 7208 (SPF)",
+     "https://www.rfc-editor.org/rfc/rfc7208"
+    ],
+    [
+     "RFC 6376 (DKIM)",
+     "https://www.rfc-editor.org/rfc/rfc6376"
+    ],
+    [
+     "RFC 7489 (DMARC)",
+     "https://www.rfc-editor.org/rfc/rfc7489"
+    ]
+   ]
+  },
+  {
+   "id": "bittorrent",
+   "session": null,
+   "title": "توزیع فایل همتابه‌همتا با BitTorrent",
+   "question": "چرا در BitTorrent هرچه تعداد دریافت‌کنندگان بیشتر شود، دانلود سریع‌تر می‌شود، برخلاف کلاینت–سرور؟",
+   "sources": [
+    [
+     "Kurose & Ross §2.5",
+     "https://gaia.cs.umass.edu/kurose_ross/index.php"
+    ],
+    [
+     "BEP 3",
+     "https://www.bittorrent.org/beps/bep_0003.html"
+    ]
+   ]
+  }
+ ]
+}

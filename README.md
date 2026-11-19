@@ -23,6 +23,8 @@
 | ۳ | state و هویت | [مشاهده](https://ie1405-scu.github.io/03-state-identity/) | [دریافت](https://ie1405-scu.github.io/03-state-identity/03-state-identity.pdf) |
 | ۴ | زیربنای HTTP: اتصال و TLS | [مشاهده](https://ie1405-scu.github.io/04-connection-tls/) | [دریافت](https://ie1405-scu.github.io/04-connection-tls/04-connection-tls.pdf) |
 | ۵ | واسطه‌ها: cache و proxy و CDN | [مشاهده](https://ie1405-scu.github.io/05-intermediaries/) | [دریافت](https://ie1405-scu.github.io/05-intermediaries/05-intermediaries.pdf) |
+| ۶ | فراتر از request/response | [مشاهده](https://ie1405-scu.github.io/06-server-push/) | [دریافت](https://ie1405-scu.github.io/06-server-push/06-server-push.pdf) |
+| ۷ | وب، وقتی کاربرش agent است | [مشاهده](https://ie1405-scu.github.io/07-machine-clients/) | [دریافت](https://ie1405-scu.github.io/07-machine-clients/07-machine-clients.pdf) |
 
 ## تمرین‌ها
 
@@ -32,6 +34,10 @@
 | :-: | --- | --- |
 | ۱ | [کدام URL شما را فریب می‌دهد؟](exercises/01-tricky-urls/) | چهارشنبه ۲۹ مهر ۱۴۰۵، ساعت ۲۳:۵۹ |
 | ۲ | [کیف پول بوفه، از سوکت تا TLS](exercises/02-socket-to-tls/) | پنجشنبه ۷ آبان ۱۴۰۵، ساعت ۲۳:۵۹ |
-| ۳ | [رزومهٔ شما روی لبهٔ اینترنت](exercises/03-edge-cv/) | پنجشنبه ۲۱ آبان ۱۴۰۵، ساعت ۲۳:۵۹ |
+| ۳ | [رزومهٔ شما روی لبهٔ اینترنت](exercises/03-edge-cv/) | یکشنبه ۱۷ آبان ۱۴۰۵، ساعت ۲۳:۵۹ |
+
+## ارائه‌ها
+
+هر دانشجو یک موضوع تازه ارائه می‌کند. موضوع‌ها، وضعیت رزرو و پیشنهاد موضوع تازه در [صفحهٔ ارائه‌ها](https://ie1405-scu.github.io/presentations/) است؛ همین فهرست در [presentations/README.md](presentations/README.md) هم هست.
 
 </div>

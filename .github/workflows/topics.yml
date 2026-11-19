@@ -1,0 +1,46 @@
+# موضوع‌های ارائه (.github/topics.mjs):
+#   push به main (هر انتشار از مخزن خصوصی) یا اجرای دستی ← issueهای موضوع‌ها با .github/topics.json هم‌گام می‌شوند
+#   کامنت روی موضوع یا پیشنهاد ← رزرو، لغو، تأیید، رد
+#   issue پیشنهاد تازه ← پاسخ «در انتظار تأیید»
+# در پایان presentations/status.json و presentations/README.md روی main به‌روز می‌شوند (صفحهٔ ارائه‌ها در سایت از همین فایل می‌خواند).
+# به secret جداگانه نیاز ندارد؛ GITHUB_TOKEN کافی است. commit همین workflow دوباره آن را اجرا نمی‌کند.
+name: موضوع‌های ارائه
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled]
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: topics
+  cancel-in-progress: false
+jobs:
+  topics:
+    # فقط issueهای موضوع و پیشنهاد؛ ثبت‌نام و issueهای دیگر را نادیده می‌گیرد
+    if: >-
+      github.event_name == 'push' || github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'ارائه') || contains(github.event.issue.labels.*.name, 'پیشنهاد')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - run: node .github/topics.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit status
+        run: |
+          git add presentations
+          git diff --cached --quiet && exit 0
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "وضعیت موضوع‌های ارائه"
+          # اگر همزمان انتشار تازه‌ای رسیده باشد، push همان انتشار این workflow را دوباره اجرا می‌کند و وضعیت از نو ساخته می‌شود
+          for i in 1 2 3; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null; sleep 5
+          done
+          echo "::warning::وضعیت commit نشد؛ اجرای بعدی آن را می‌سازد."

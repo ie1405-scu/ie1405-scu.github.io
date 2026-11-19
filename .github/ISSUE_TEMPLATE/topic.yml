@@ -1,0 +1,58 @@
+name: پیشنهاد موضوع ارائه
+description: موضوعی را که در فهرست ارائه‌ها نیست پیشنهاد دهید
+title: "پیشنهاد: "
+labels: ["پیشنهاد"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        <div dir="rtl">
+
+        ## پیشنهاد موضوع ارائه
+
+        موضوعی را پیشنهاد دهید که در فهرست ارائه‌ها نیست و در کلاس هم تدریس نشده است.
+
+        1. عنوان کوتاه موضوع را بعد از «پیشنهاد: » در عنوان بالای فرم بنویسید.
+        2. کادرهای پایین را پر کنید و دکمهٔ سبز را بزنید.
+        3. پس از تأیید مدرس، موضوع به فهرست اضافه می‌شود. اگر گزینهٔ آخر را علامت بزنید، همان موقع برای خودتان رزرو می‌شود.
+
+        </div>
+  - type: dropdown
+    id: session
+    attributes:
+      label: جلسهٔ مرتبط
+      description: ارائه پس از کدام جلسه معنا پیدا می‌کند؟
+      options:
+        - "جلسهٔ ۰: اینترنت چطور به اینجا رسید؟"
+        - "جلسهٔ ۱: از URL تا سرور"
+        - "جلسهٔ ۲: یک تراکنش HTTP"
+        - "جلسهٔ ۳: state و هویت"
+        - "جلسهٔ ۴: زیربنای HTTP: اتصال و TLS"
+        - "جلسهٔ ۵: واسطه‌ها: cache و proxy و CDN"
+        - "جلسهٔ ۶: فراتر از request/response"
+        - "جلسهٔ ۷: وب، وقتی کاربرش agent است"
+        - "هیچ جلسهٔ مشخصی"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: سؤال محوری
+      description: ارائه به چه سؤالی پاسخ می‌دهد؟ یک یا دو جمله.
+      placeholder: چرا ... ؟ چگونه ... ؟
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: منابع
+      description: هر منبع در یک خط، با نشانی کامل (RFC، MDN، مستندات رسمی، فصل کتاب)
+      placeholder: https://www.rfc-editor.org/rfc/rfc9110
+    validations:
+      required: false
+  - type: checkboxes
+    id: self
+    attributes:
+      label: ارائه‌دهنده
+      options:
+        - label: می‌خواهم خودم این موضوع را ارائه کنم

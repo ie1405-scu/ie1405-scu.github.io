@@ -1,0 +1,266 @@
+/* سایت درس: فهرست جلسه‌ها، صفحهٔ تمرین و قواعد کلاس. هم‌خانوادهٔ تم اسلایدها: هر صفحه در قاب مرورگر.
+   برای تغییر ظاهر فقط بخش «توکن‌ها» را عوض کنید؛ بقیهٔ فایل از همین متغیرها می‌خواند. */
+@font-face { font-family: Vazirmatn; src: url(vazirmatn.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url(jetbrains-mono.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+
+/* ── توکن‌ها ──
+   رنگ‌های حالت شب دو بار آمده‌اند و باید یکی بمانند: یک بار برای تنظیم دستگاه (prefers-color-scheme)
+   و یک بار برای انتخاب دستی با دکمهٔ نوار ابزار (data-theme روی html). */
+:root {
+  color-scheme: light;
+  --bg: #F4F6F8; --surface: #FFFFFF; --chrome: #DDE4EB; --ink: #16202C; --muted: #5A6776; --faint: #9AA8B6;
+  --rule: #D5DCE3; --rule-soft: #EDF1F5; --dash: #C3CDD7;
+  --accent: #0A6C86; --accent-strong: #08586E; --on-accent: #FFFFFF;
+  --ex: #137333; --ex-soft: #E6F4EA; --code: #EDF1F5; --warm: #A4561C; --warm-soft: #FBF0E6;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
+  --r-control: 8px; --r-chip: 10px; --r-panel: 14px;
+  --t-small: 14px; --t-body: 17px; --t-title: 19px; --t-section: 24px; --t-display: clamp(40px, 8vw, 68px);
+  --chip: 44px;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0F1720; --surface: #16212C; --chrome: #080D13; --ink: #E6ECF2; --muted: #9AA8B6; --faint: #5A6776;
+    --rule: #2A3947; --rule-soft: #1F2B37; --dash: #3A4A5A;
+    --accent: #4FB6D0; --accent-strong: #7CCBE0; --on-accent: #0F1720;
+    --ex: #5CBF85; --ex-soft: #173024; --code: #1B2733; --warm: #E3A15F; --warm-soft: #33251A;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0F1720; --surface: #16212C; --chrome: #080D13; --ink: #E6ECF2; --muted: #9AA8B6; --faint: #5A6776;
+  --rule: #2A3947; --rule-soft: #1F2B37; --dash: #3A4A5A;
+  --accent: #4FB6D0; --accent-strong: #7CCBE0; --on-accent: #0F1720;
+  --ex: #5CBF85; --ex-soft: #173024; --code: #1B2733; --warm: #E3A15F; --warm-soft: #33251A;
+}
+
+/* ── پایه ── */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: var(--t-body)/1.9 Vazirmatn, Tahoma, sans-serif; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent-strong); }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 920px; margin-inline: auto; padding-inline: var(--s5); }
+.skip { position: absolute; z-index: 2; inset-inline-start: var(--s4); top: -60px; padding: var(--s2) var(--s4); background: var(--surface); border-radius: var(--r-control); }
+.skip:focus { top: var(--s2); }
+
+/* ── قاب مرورگر: تب، نوار نشانی، نوار پیوندها ── */
+.chrome { background: var(--chrome); }
+.tabs { display: flex; padding: var(--s2) var(--s4) 0; }
+.tab { display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding-inline: 20px; background: var(--surface); border-radius: var(--r-chip) var(--r-chip) 0 0; color: var(--ink); font-size: var(--t-small); font-weight: 600; line-height: 1.6; text-decoration: none; }
+.tab:hover { color: var(--ink); }
+.fav { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+.bar { display: flex; align-items: center; gap: var(--s3); padding: 6px var(--s4); background: var(--surface); }
+.deco { display: flex; gap: var(--s3); color: var(--faint); }
+.omni { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: var(--s2); min-height: 36px; padding-inline: var(--s4); background: var(--bg); border-radius: 999px; color: var(--muted); font: 14px/1.6 var(--mono); }
+.omni svg { width: 15px; height: 15px; }
+.url { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.url b { color: var(--ink); font-weight: 400; }
+.theme { flex: none; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--muted); cursor: pointer; }
+.theme:hover { background: var(--bg); color: var(--ink); }
+.theme[hidden] { display: none; }
+/* دکمه حالتی را نشان می‌دهد که با زدنش می‌آید: در روز ماه، در شب خورشید */
+.theme svg + svg { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme svg { display: none; }
+  :root:not([data-theme="light"]) .theme svg + svg { display: block; }
+}
+:root[data-theme="dark"] .theme svg { display: none; }
+:root[data-theme="dark"] .theme svg + svg { display: block; }
+.marks { display: flex; flex-wrap: wrap; gap: 0 var(--s2); padding-inline: var(--s2); background: var(--surface); border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule); font-size: var(--t-small); }
+.marks a { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; padding-inline: var(--s3); color: var(--ink); font-weight: 600; text-decoration: none; }
+.marks a:hover { color: var(--accent); }
+.marks svg { width: 16px; height: 16px; }
+
+/* ── «به نام خدا» به قالب کامنت HTML ──
+   لیگاچر قلم خاموش است؛ وگرنه JetBrains Mono علامت‌های کامنت را به پیکان تبدیل می‌کند. */
+.bism { margin: 40px 0 var(--s7); text-align: center; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.bism .c { font-family: var(--mono); font-size: var(--t-small); font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
+.bism bdi { padding-inline: var(--s3); }
+
+/* ── معرفی درس ── */
+.hero { padding-bottom: var(--s7); border-bottom: 1px solid var(--rule); }
+.hero h1 { font-size: var(--t-display); font-weight: 800; line-height: 1.3; margin: var(--s2) 0 var(--s4); }
+.hero p { margin: 0; color: var(--muted); font-size: 18px; }
+.hero b { color: var(--ink); font-weight: 700; }
+.hero .hint { margin-top: var(--s4); font-size: 16px; }
+
+/* ── بخش‌ها ── */
+.block { margin-top: 40px; }
+.head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0 var(--s4); }
+.head h2 { font-size: var(--t-section); font-weight: 800; line-height: 1.5; margin: 0; }
+.head p { margin: 0; color: var(--muted); font-size: var(--t-small); }
+.chapter h3 { font-size: 15px; font-weight: 700; color: var(--muted); margin: var(--s5) 0 var(--s2); }
+
+/* ── فهرست جلسه‌ها: شمارهٔ پر یعنی منتشرشده، خط‌چین یعنی به‌زودی ── */
+.sessions { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--rule); }
+.session { display: grid; grid-template-columns: var(--chip) minmax(0, 1fr) auto; column-gap: 20px; align-items: center; padding-block: 20px; border-top: 1px solid var(--rule); }
+.n { align-self: start; width: var(--chip); height: var(--chip); border-radius: var(--r-chip); display: grid; place-items: center; font-weight: 800; font-size: 18px; line-height: 1; background: var(--accent); color: var(--on-accent); }
+.t h4 { font-size: var(--t-title); font-weight: 700; line-height: 1.6; margin: 0; }
+.t p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.t .addr { margin-top: var(--s1); text-align: right; font: 13px/1.6 var(--mono); overflow-wrap: anywhere; }
+.a { display: flex; gap: var(--s2); flex-wrap: wrap; justify-content: flex-end; }
+.off .n { background: none; color: var(--muted); border: 2px dashed var(--dash); }
+.off .t h4 { color: var(--muted); font-weight: 600; }
+.soon { font-size: var(--t-small); color: var(--muted); }
+.more { margin: var(--s4) 0 0; color: var(--muted); font-size: 15px; }
+
+/* ── دکمهٔ ویژهٔ «روش کار، نمره و پروژه» در معرفی درس ── */
+.feature { display: inline-flex; align-items: center; gap: 10px; margin-top: var(--s5); min-height: 44px; padding-inline: 18px 14px; background: var(--accent); color: var(--on-accent); border-radius: var(--r-control); font-size: 16px; font-weight: 700; line-height: 1; text-decoration: none; transition: background-color .15s; }
+.feature:hover { background: var(--accent-strong); color: var(--on-accent); }
+.feature svg { width: 18px; height: 18px; }
+.feature > svg:last-child { opacity: .8; transition: transform .15s; }
+.feature:hover > svg:last-child { transform: translateX(-3px); }
+
+/* ── صفحهٔ قواعد کلاس: کارت سه جای یادگیری و نوار ۲۰ نمره ──
+   نوار ۲۰ نمره: پهنای هر تکه به اندازهٔ نمرهٔ آن است؛ نام هر تکه در راهنمای زیر نوار هم آمده تا رنگ تنها نشانه نباشد. */
+.card { margin-block: var(--s4); background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r-panel); overflow: hidden; }
+.pillars { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pillars li { display: flex; flex-direction: column; gap: 2px; padding: 20px var(--s5); border-inline-start: 1px solid var(--rule-soft); }
+.pillars li:first-child { border-inline-start: 0; }
+.pillars .k { color: var(--accent); font-size: var(--t-small); font-weight: 700; }
+.pillars b { font-size: var(--t-title); font-weight: 800; line-height: 1.6; }
+.pillars .d { color: var(--muted); font-size: 15px; line-height: 1.8; }
+.grade { padding: 20px var(--s5); }
+.gbar { display: flex; gap: 3px; height: 36px; }
+.gbar span { flex: 1 1 0; min-width: 0; display: grid; place-items: center; border-radius: 6px; font-weight: 800; font-size: 15px; line-height: 1; }
+.g1 { background: var(--accent); color: var(--on-accent); }
+.g2 { background: var(--ex); color: var(--on-accent); }
+.g3 { background: var(--warm); color: var(--on-accent); }
+.g4 { background: var(--dash); color: var(--ink); }
+.legend { list-style: none; margin: var(--s3) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) 20px; color: var(--muted); font-size: 15px; }
+.legend li { display: inline-flex; align-items: center; gap: var(--s2); }
+.legend i { width: 12px; height: 12px; border-radius: 3px; }
+.legend b { color: var(--ink); font-weight: 800; }
+.legend .bonus { color: var(--warm); font-weight: 600; }
+
+/* ── دکمه‌ها ── */
+.btn { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; padding-inline: var(--s4); border: 1px solid var(--rule); border-radius: var(--r-control); background: var(--surface); color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; white-space: nowrap; transition: background-color .15s, border-color .15s; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); }
+
+.empty { margin: var(--s4) 0 0; padding: var(--s5); border: 2px dashed var(--dash); border-radius: var(--r-panel); color: var(--muted); font-size: 16px; }
+
+/* ── صفحه‌های متنی: تمرین و قواعد کلاس ── */
+.doc { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r-panel); padding: var(--s2) 28px var(--s5); margin-block: 28px; }
+.doc h1 { font-size: 28px; line-height: 1.5; }
+.doc h2 { font-size: 20px; margin-top: 30px; border-top: 1px solid var(--rule); padding-top: 18px; }
+.doc blockquote { margin: 0; padding: var(--s1) var(--s4); border-inline-start: 4px solid var(--ex); background: var(--ex-soft); border-radius: 6px; color: var(--ink); }
+.doc code { font-family: var(--mono); font-size: .86em; background: var(--code); padding: 1px 6px; border-radius: 4px; direction: ltr; unicode-bidi: isolate; }
+.doc pre { background: var(--code); padding: var(--s3) var(--s4); border-radius: var(--r-control); overflow-x: auto; text-align: left; line-height: 1.6; }
+.doc pre code { background: none; padding: 0; font-size: 14px; }
+.tbl { overflow-x: auto; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.doc th, .doc td { border-bottom: 1px solid var(--rule); padding: var(--s2) 10px; text-align: start; vertical-align: top; }
+.doc th { color: var(--muted); font-weight: 700; }
+.files { border-top: 1px solid var(--rule); padding-top: 14px; }
+
+/* ── پانویس ── */
+footer { margin-top: 56px; border-top: 1px solid var(--rule); color: var(--muted); font-size: var(--t-small); }
+footer .wrap { padding-block: var(--s5) var(--s7); }
+
+/* ── صفحهٔ ارائه‌ها ── */
+.phead { padding: 40px 0 var(--s6); border-bottom: 1px solid var(--rule); }
+.kicker { display: inline-flex; align-items: center; gap: var(--s2); margin: 0; color: var(--accent); font-size: var(--t-small); font-weight: 700; }
+.kicker svg { width: 16px; height: 16px; }
+.phead h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 800; line-height: 1.35; margin: var(--s2) 0 var(--s3); }
+.lead { margin: 0; max-width: 62ch; color: var(--muted); font-size: 18px; }
+.tally { margin-top: var(--s5); max-width: 520px; }
+.nums { display: flex; gap: var(--s6); }
+.nums span { display: flex; flex-direction: column; color: var(--muted); font-size: var(--t-small); line-height: 1.6; }
+.nums b { color: var(--ink); font-size: 30px; font-weight: 800; line-height: 1.3; }
+.nums .free b { color: var(--ex); }
+.nums .taken b { color: var(--warm); }
+.meter { margin-top: var(--s3); height: 8px; border-radius: 999px; background: var(--ex-soft); overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--warm); border-radius: 999px; transition: width .6s; }
+.steps { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+.steps li { display: flex; gap: var(--s3); padding: 18px; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r-panel); }
+.sn { flex: none; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 800; line-height: 1; }
+.steps b { display: block; font-size: 16px; line-height: 1.7; }
+.steps p { margin: 2px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.8; }
+.rules { padding: 0 var(--s5); }
+.rules summary { min-height: 48px; display: flex; align-items: center; cursor: pointer; font-weight: 700; }
+.rules ul { margin: 0 0 var(--s4); padding-inline-start: 20px; color: var(--muted); font-size: 15px; }
+.tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin: var(--s4) 0 var(--s2); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.chip { min-height: 36px; padding: 0 14px; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); color: var(--ink); font: 600 14px/1 Vazirmatn, Tahoma, sans-serif; cursor: pointer; transition: background-color .15s, border-color .15s; }
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.tools-end { display: flex; align-items: center; gap: var(--s3); }
+.toggle { display: inline-flex; align-items: center; gap: var(--s2); min-height: 40px; font-size: var(--t-small); font-weight: 600; cursor: pointer; white-space: nowrap; }
+.toggle input { width: 18px; height: 18px; margin: 0; accent-color: var(--ex); }
+.search { width: 210px; min-height: 40px; padding: 0 var(--s3); border: 1px solid var(--rule); border-radius: var(--r-control); background: var(--surface); color: var(--ink); font: 15px Vazirmatn, Tahoma, sans-serif; }
+.search:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+.tgroup h3 { display: flex; align-items: center; gap: 10px; margin: var(--s6) 0 var(--s3); font-size: 16px; font-weight: 700; color: var(--muted); }
+.gn { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; background: var(--accent); color: var(--on-accent); font-size: 14px; font-weight: 800; line-height: 1; }
+.gn.book { background: var(--warm); }
+.tgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+.topic { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r-panel); transition: border-color .15s, box-shadow .15s; }
+.topic:hover { border-color: var(--accent); box-shadow: 0 6px 20px -14px var(--accent); }
+.topic.is-taken { background: var(--bg); }
+.topic.is-taken:hover { border-color: var(--rule); box-shadow: none; }
+.topic.is-taken h4 { color: var(--muted); }
+.ttop { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.state { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.state::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.state.free { background: var(--ex-soft); color: var(--ex); }
+.state.taken { background: var(--warm-soft); color: var(--warm); }
+.state.unknown { background: var(--code); color: var(--muted); }
+.tag { display: inline-flex; align-items: center; padding: 2px 10px; border: 1px dashed var(--dash); border-radius: 999px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.topic h4 { margin: 0; font-size: var(--t-title); font-weight: 800; line-height: 1.6; }
+.topic .q { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
+.refs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.refs a { display: inline-block; padding: 2px 8px; border-radius: 6px; background: var(--code); color: var(--muted); font: 12.5px/1.7 var(--mono); text-decoration: none; }
+.refs a:hover { color: var(--accent); }
+.tfoot { margin-top: auto; padding-top: var(--s3); border-top: 1px solid var(--rule-soft); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); }
+.tfoot .hint { color: var(--muted); font-size: 13.5px; }
+.tfoot .hint b { color: var(--ink); }
+.who { display: inline-flex; align-items: center; gap: var(--s2); font: 14px/1.6 var(--mono); color: var(--ink); }
+.who img { border-radius: 50%; border: 1px solid var(--rule); background: var(--code); }
+.cta { display: flex; align-items: center; justify-content: space-between; gap: var(--s5); padding: 20px var(--s5); }
+.cta b { font-size: var(--t-title); font-weight: 800; }
+.cta p { margin: var(--s1) 0 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
+.sub { margin: var(--s5) 0 var(--s2); font-size: 16px; font-weight: 700; color: var(--muted); }
+.props { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--rule); }
+.props li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s1) var(--s3); padding: var(--s3) 0; border-top: 1px solid var(--rule); }
+.props a { font-weight: 700; }
+.props .meta { color: var(--muted); font-size: 13px; }
+.session .n svg { width: 20px; height: 20px; }
+
+/* ── گوشی ── */
+@media (max-width: 640px) {
+  :root { --t-body: 16px; --t-title: 18px; --chip: 36px; }
+  .wrap { padding-inline: var(--s4); }
+  .tabs { padding-inline: var(--s2); }
+  .bar { padding-inline: var(--s2); gap: var(--s2); }
+  .deco svg:not(:last-child) { display: none; }
+  .omni { padding-inline: var(--s3); font-size: 13px; }
+  .bism { margin-block: var(--s6); }
+  .hero p { font-size: 16px; }
+  .n { font-size: 16px; }
+  .session { grid-template-columns: var(--chip) minmax(0, 1fr); column-gap: var(--s3); padding-block: var(--s4); }
+  .a { grid-column: 2; justify-content: flex-start; margin-top: var(--s3); }
+  .off .a { margin-top: var(--s1); }
+  .btn { padding-inline: var(--s3); font-size: var(--t-small); }
+  .doc { padding: var(--s1) var(--s4) 18px; }
+  .pillars { grid-template-columns: minmax(0, 1fr); }
+  .pillars li { border-inline-start: 0; border-top: 1px solid var(--rule-soft); padding: var(--s4); }
+  .pillars li:first-child { border-top: 0; }
+  .grade { padding-inline: var(--s4); }
+  .phead { padding-top: var(--s6); }
+  .lead { font-size: 16px; }
+  .nums { gap: var(--s5); }
+  .nums b { font-size: 26px; }
+  .steps, .tgrid { grid-template-columns: minmax(0, 1fr); }
+  .tools-end { width: 100%; justify-content: space-between; }
+  .search { flex: 1 1 auto; width: auto; min-width: 0; }
+  .topic { padding: var(--s4); }
+  .cta { flex-direction: column; align-items: stretch; padding: var(--s4); }
+  .cta .btn { justify-content: center; }
+
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } .meter i { transition: none; } .feature:hover > svg:last-child { transform: none; } }

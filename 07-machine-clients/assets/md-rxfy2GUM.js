@@ -1,0 +1,20 @@
+import{$ as e,C as t,D as n,Q as r,S as i,W as a,_ as o,_t as s,b as c,v as l,yt as u,z as d}from"./modules/shiki-D6KYKeN5.js";import{Tt as f,ot as p,st as m}from"./index-DCl6X_g9.js";import{t as h}from"./slidev/CodeBlockWrapper-BIirvPSp.js";import{t as g}from"./default-BUu6DSEO.js";var _={class:`three`},v={class:`answer`,style:{"font-size":`21px`}},y=f({__name:`07-machine-clients.md__slidev_7`,setup(f){let{$slidev:y,$nav:b,$clicksContext:x,$clicks:S,$page:C,$renderContext:w,$frontmatter:T}=m();return x.setup(),(f,m)=>{let y=h,b=a(`click`);return d(),l(g,u(n(s(p)(s(T),6))),{punch:r(t=>[e((d(),c(`div`,null,[...m[7]||=[i(`فایل `,-1),o(`code`,null,`robots.txt`,-1),i(` سیاست اعلام‌شدهٔ سایت را نشان می‌دهد؛ اما این سیاست یک درخواست است، نه یک محدودیت فنی الزام‌آور.`,-1)]])),[[b,1]])]),default:r(()=>[m[8]||=o(`h1`,null,`سه سایت واقعی، سه سیاست: چه تفاوتی دارند؟`,-1),o(`div`,_,[o(`div`,null,[m[1]||=o(`p`,null,[o(`strong`,null,[i(`الف) `),o(`a`,{href:`https://www.cloudflare.com/robots.txt`,target:`_blank`},`cloudflare.com`)])],-1),t(y,{title:``,ranges:[]},{default:r(()=>[...m[0]||=[o(`pre`,{class:`shiki shiki-themes vitesse-dark vitesse-light slidev-code`,style:{"--shiki-dark":`#dbd7caee`,"--shiki-light":`#393a34`,"--shiki-dark-bg":`#121212`,"--shiki-light-bg":`#ffffff`}},[o(`code`,{class:`language-text`},[o(`span`,{class:`line`},[o(`span`,null,`User-agent: GPTBot`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Allow: /`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`User-agent: *`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Allow: /`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Content-Signal: ai-train=yes, search=yes, ai-input=yes`)])])],-1)]]),_:1})]),o(`div`,null,[m[3]||=o(`p`,null,[o(`strong`,null,[i(`ب) `),o(`a`,{href:`https://www.theregister.com/robots.txt`,target:`_blank`},`theregister.com`)])],-1),t(y,{title:``,ranges:[]},{default:r(()=>[...m[2]||=[o(`pre`,{class:`shiki shiki-themes vitesse-dark vitesse-light slidev-code`,style:{"--shiki-dark":`#dbd7caee`,"--shiki-light":`#393a34`,"--shiki-dark-bg":`#121212`,"--shiki-light-bg":`#ffffff`}},[o(`code`,{class:`language-text`},[o(`span`,{class:`line`},[o(`span`,null,`User-agent: GPTBot`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Disallow: /`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`User-agent: ChatGPT-User`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Allow: /`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`User-agent: *`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Allow: /ads.txt`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Allow: /app-ads.txt`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`Disallow: /`)])])],-1)]]),_:1})]),o(`div`,null,[m[5]||=o(`p`,null,[o(`strong`,null,[i(`ج) `),o(`a`,{href:`https://www.digikala.com/robots.txt`,target:`_blank`},`digikala.com`)])],-1),t(y,{title:``,ranges:[]},{default:r(()=>[...m[4]||=[o(`pre`,{class:`shiki shiki-themes vitesse-dark vitesse-light slidev-code`,style:{"--shiki-dark":`#dbd7caee`,"--shiki-light":`#393a34`,"--shiki-dark-bg":`#121212`,"--shiki-light-bg":`#ffffff`}},[o(`code`,{class:`language-text`},[o(`span`,{class:`line`},[o(`span`,null,`user-agent: *`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`disallow: /cart/*`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`disallow: /checkout/*`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`disallow: /search?q=*`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`disallow: *?*`)]),i(`
+`),o(`span`,{class:`line`},[o(`span`,null,`disallow: /users/*`)])])],-1)]]),_:1})])]),e((d(),c(`div`,v,[...m[6]||=[o(`strong`,null,`The Register`,-1),i(` پیش‌فرض را بر منع گذاشته است: خزندهٔ آموزش (`,-1),o(`code`,null,`GPTBot`,-1),i(`) را نمی‌پذیرد و `,-1),o(`code`,null,`ChatGPT-User`,-1),i(` را می‌پذیرد. `,-1),o(`strong`,null,`دیجی‌کالا`,-1),i(` نامی از crawlerهای هوش مصنوعی نبرده است؛ پس قاعدهٔ عمومی `,-1),o(`code`,null,`*`,-1),i(` اعمال می‌شود، که پذیرش صریح نیست.`,-1)]])),[[b,1]])]),_:1},16)}}},[[`__scopeId`,`data-v-bf51042a`]]);export{y as default};

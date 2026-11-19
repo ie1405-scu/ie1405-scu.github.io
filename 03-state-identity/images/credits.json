@@ -1,0 +1,12 @@
+{
+  "kurose-fig-2-10.png": {
+    "artist": "Kurose & Ross, Figure 2.10",
+    "license": "author slides",
+    "page": "https://gaia.cs.umass.edu/kurose_ross/ppt.php"
+  },
+  "mdn-cors-credentials.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+  }
+}

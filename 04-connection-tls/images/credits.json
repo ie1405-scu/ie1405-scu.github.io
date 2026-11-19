@@ -1,0 +1,17 @@
+{
+  "mdn-http-layers.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+  },
+  "mdn-http1-connections.png": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Connection_management_in_HTTP_1.x"
+  },
+  "kurose-http2-hol.png": {
+    "artist": "Kurose & Ross, Chapter 2 slides",
+    "license": "author slides",
+    "page": "https://gaia.cs.umass.edu/kurose_ross/ppt.php"
+  }
+}

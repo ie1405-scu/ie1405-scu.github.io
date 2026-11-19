@@ -1,0 +1,1 @@
+import{_ as e,g as t,v as n}from"../index-D4fD85gn.js";function r(){return{isColorSchemaConfigured:t,isDark:e,toggleDark:n}}export{r as t};

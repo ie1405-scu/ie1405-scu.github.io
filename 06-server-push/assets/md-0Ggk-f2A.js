@@ -1,0 +1,15 @@
+import{C as e,D as t,Q as n,S as r,_ as i,_t as a,v as o,yt as s,z as c}from"./modules/shiki-D6KYKeN5.js";import{Tt as l,ot as u,st as d}from"./index-D4fD85gn.js";import{t as f}from"./slidev/CodeBlockWrapper-C8qooJ_6.js";import{t as p}from"./default-BDK2NZCu.js";var m={class:`cols`,style:{"grid-template-columns":`1.1fr 1fr`}},h={dir:`ltr`,style:{"--slidev-code-font-size":`14px`}},g=l({__name:`06-server-push.md__slidev_13`,setup(l){let{$slidev:g,$nav:_,$clicksContext:v,$clicks:y,$page:b,$renderContext:x,$frontmatter:S}=d();return v.setup(),(l,d)=>{let g=f;return c(),o(p,s(t(a(u)(a(S),12))),{punch:n(e=>[...d[2]||=[i(`p`,null,`خط خالی پایان هر رویداد است؛ تا خط خالی نرسد، مرورگر رویداد را تحویل برنامه نمی‌دهد.`,-1)]]),default:n(()=>[d[3]||=i(`h1`,null,[r(`قالب رویداد در SSE: چند خط `),i(`code`,null,`field: value`),r(` و یک خط خالی`)],-1),i(`div`,m,[d[1]||=i(`div`,null,[i(`table`,null,[i(`thead`,null,[i(`tr`,null,[i(`th`,null,`فیلد`),i(`th`,null,`کار`)])]),i(`tbody`,null,[i(`tr`,null,[i(`td`,null,[i(`code`,null,`data`)]),i(`td`,null,[r(`محتوای رویداد؛ چند خط `),i(`code`,null,`data`),r(` با newline به هم می‌پیوندند`)])]),i(`tr`,null,[i(`td`,null,[i(`code`,null,`event`)]),i(`td`,null,[r(`نوع رویداد؛ اگر نباشد، نوع `),i(`code`,null,`message`),r(` است`)])]),i(`tr`,null,[i(`td`,null,[i(`code`,null,`id`)]),i(`td`,null,`شمارهٔ رویداد؛ برای ادامه پس از قطع`)]),i(`tr`,null,[i(`td`,null,[i(`code`,null,`retry`)]),i(`td`,null,`زمان انتظار پیش از اتصال دوباره، به میلی‌ثانیه`)]),i(`tr`,null,[i(`td`,null,[r(`خط آغازشده با `),i(`code`,null,`:`)]),i(`td`,null,`توضیح (comment)؛ نادیده گرفته می‌شود`)])])]),i(`p`,{class:`small`},[r(`مرجع: `),i(`a`,{href:`https://html.spec.whatwg.org/multipage/server-sent-events.html#parsing-an-event-stream`},`WHATWG HTML، بخش Server-sent events`)])],-1),i(`div`,h,[e(g,{title:``,ranges:[]},{default:n(()=>[...d[0]||=[i(`pre`,{class:`shiki shiki-themes vitesse-dark vitesse-light slidev-code`,style:{"--shiki-dark":`#dbd7caee`,"--shiki-light":`#393a34`,"--shiki-dark-bg":`#121212`,"--shiki-light-bg":`#ffffff`}},[i(`code`,{class:`language-text`},[i(`span`,{class:`line`},[i(`span`,null,`: connected`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`retry: 5000`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`data: kitchen is open`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`id: 41`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`event: order`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`data: {"order": 1226,`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`data:  "status": "ready"}`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`id: 42`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`event: order`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`data: {"order": 1227, "status": "ready"}`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`data: last one`)])])],-1)]]),_:1})])])]),_:1},16)}}},[[`__scopeId`,`data-v-c329ac24`]]);export{g as default};

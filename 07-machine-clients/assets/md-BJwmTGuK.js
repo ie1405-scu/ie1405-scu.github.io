@@ -1,0 +1,10 @@
+import{C as e,D as t,Q as n,S as r,_ as i,_t as a,v as o,yt as s,z as c}from"./modules/shiki-D6KYKeN5.js";import{ot as l,st as u}from"./index-DCl6X_g9.js";import{t as d}from"./slidev/CodeBlockWrapper-BIirvPSp.js";import{t as f}from"./default-BUu6DSEO.js";var p={dir:`ltr`,style:{"--slidev-code-font-size":`15px`}},m={__name:`07-machine-clients.md__slidev_39`,setup(m){let{$slidev:h,$nav:g,$clicksContext:_,$clicks:v,$page:y,$renderContext:b,$frontmatter:x}=u();return _.setup(),(u,m)=>{let h=d;return c(),o(f,s(t(a(l)(a(x),38))),{punch:n(e=>[...m[1]||=[i(`p`,null,`سفارش اول یک بار ثبت شد، هرچند کلاینت پاسخ آن را هرگز ندید.`,-1)]]),default:n(()=>[m[2]||=i(`h1`,null,`خروجی واقعی: سرور با تکرار یک خرید چه می‌کند؟`,-1),i(`div`,p,[e(h,{title:``,ranges:[]},{default:n(()=>[...m[0]||=[i(`pre`,{class:`shiki shiki-themes vitesse-dark vitesse-light slidev-code`,style:{"--shiki-dark":`#dbd7caee`,"--shiki-light":`#393a34`,"--shiki-dark-bg":`#121212`,"--shiki-light-bg":`#ffffff`}},[i(`code`,{class:`language-text`},[i(`span`,{class:`line`},[i(`span`,null,`$ U=localhost:8007/orders; K='Idempotency-Key: 7f3c'`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`$ curl -sS -X POST "$U?drop=1" -H "$K" -d '{"book":"Kurose"}'`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`curl: (52) Empty reply from server`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`$ curl -si -X POST $U -H "$K" -d '{"book":"Kurose"}'`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`HTTP/1.1 201 Created`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`{"order":1001,"book":"Kurose"}`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`$ curl -si -X POST $U -H "$K" -d '{"book":"Fowler"}'`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`HTTP/1.1 422 Unprocessable Entity`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`$ # two requests at once, Idempotency-Key: 9a1e`)]),r(`
+`),i(`span`,{class:`line`},[i(`span`,null,`HTTP/1.1 409 Conflict`)])])],-1)]]),_:1})]),m[3]||=i(`p`,{class:`small`},[r(`سرور این دمو در پوشهٔ `),i(`code`,null,`labs/07-machine-clients/local`),r(` است و با Node 22 اجرا شده است.`)],-1)]),_:1},16)}}};export{m as default};

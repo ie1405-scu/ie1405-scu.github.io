@@ -1,0 +1,22 @@
+{
+  "geo-explain.jpg": {
+    "artist": "Aggarwal et al., GEO: Generative Engine Optimization (KDD 2024)",
+    "license": "CC BY 4.0",
+    "page": "https://arxiv.org/abs/2311.09735"
+  },
+  "a2a-mcp.png": {
+    "artist": "A2A Project contributors",
+    "license": "Apache 2.0",
+    "page": "https://github.com/a2aproject/A2A/blob/main/docs/assets/a2a-mcp.png"
+  },
+  "ap2-roles.png": {
+    "artist": "AP2 Project contributors (Google)",
+    "license": "Apache 2.0",
+    "page": "https://github.com/google-agentic-commerce/AP2/blob/main/docs/assets/roles_responsibilities.png"
+  },
+  "ap2-mandate.png": {
+    "artist": "AP2 Project contributors (Google), rendered from mandate_chain_example.svg",
+    "license": "Apache 2.0",
+    "page": "https://github.com/google-agentic-commerce/AP2/blob/main/docs/assets/mandate_chain_example.svg"
+  }
+}

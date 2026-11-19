@@ -1,0 +1,1 @@
+import{c as e}from"./chunk-YOWFEKIV-BoUly68H.js";export{e as createInfoServices};

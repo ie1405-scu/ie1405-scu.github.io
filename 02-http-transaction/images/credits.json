@@ -1,0 +1,32 @@
+{
+  "mdn-http-layers.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+  },
+  "mdn-client-server-chain.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+  },
+  "mdn-fetching-a-page.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+  },
+  "mdn-http-message-anatomy.svg": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages"
+  },
+  "mdn-http-2-connection.png": {
+    "artist": "MDN, Mozilla Contributors",
+    "license": "CC BY-SA 2.5",
+    "page": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages"
+  },
+  "kurose-fig-2-7.png": {
+    "artist": "Kurose & Ross, Figure 2.7",
+    "license": "author slides",
+    "page": "https://gaia.cs.umass.edu/kurose_ross/ppt.php"
+  }
+}

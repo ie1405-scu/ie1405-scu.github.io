@@ -314,6 +314,102 @@
    "proposed": false,
    "by": null,
    "at": null
+  },
+  {
+   "id": "web-push",
+   "issue": 53,
+   "url": "https://github.com/ie1405-scu/ie1405-scu.github.io/issues/53",
+   "title": "اعلان‌های Web Push",
+   "question": "وقتی صفحه بسته است، پیام سرور چگونه به کاربر می‌رسد، و push service در این میان چه چیزی را می‌بیند؟",
+   "session": 6,
+   "sources": [
+    [
+     "Push API (MDN)",
+     "https://developer.mozilla.org/en-US/docs/Web/API/Push_API"
+    ],
+    [
+     "RFC 8030",
+     "https://www.rfc-editor.org/rfc/rfc8030"
+    ],
+    [
+     "RFC 8292 (VAPID)",
+     "https://www.rfc-editor.org/rfc/rfc8292"
+    ]
+   ],
+   "proposed": false,
+   "by": null,
+   "at": null
+  },
+  {
+   "id": "iot-protocols",
+   "issue": 54,
+   "url": "https://github.com/ie1405-scu/ie1405-scu.github.io/issues/54",
+   "title": "پروتکل‌های اینترنت اشیا",
+   "question": "حسگری با باتری کوچک چرا HTTP را کنار می‌گذارد؟ MQTT و CoAP چه تفاوتی دارند و چرا CoAP روی UDP است؟",
+   "session": 6,
+   "sources": [
+    [
+     "MQTT specification",
+     "https://mqtt.org/mqtt-specification/"
+    ],
+    [
+     "RFC 7252 (CoAP)",
+     "https://www.rfc-editor.org/rfc/rfc7252"
+    ]
+   ],
+   "proposed": false,
+   "by": null,
+   "at": null
+  },
+  {
+   "id": "email-auth",
+   "issue": 55,
+   "url": "https://github.com/ie1405-scu/ie1405-scu.github.io/issues/55",
+   "title": "ایمیل و اعتبارسنجی فرستنده",
+   "question": "پروتکل SMTP فرستنده را بررسی نمی‌کند؛ SPF و DKIM و DMARC چگونه این کمبود را جبران می‌کنند، و چرا ایمیل جعلی هنوز ممکن است؟",
+   "session": null,
+   "sources": [
+    [
+     "Kurose & Ross §2.3",
+     "https://gaia.cs.umass.edu/kurose_ross/index.php"
+    ],
+    [
+     "RFC 7208 (SPF)",
+     "https://www.rfc-editor.org/rfc/rfc7208"
+    ],
+    [
+     "RFC 6376 (DKIM)",
+     "https://www.rfc-editor.org/rfc/rfc6376"
+    ],
+    [
+     "RFC 7489 (DMARC)",
+     "https://www.rfc-editor.org/rfc/rfc7489"
+    ]
+   ],
+   "proposed": false,
+   "by": null,
+   "at": null
+  },
+  {
+   "id": "bittorrent",
+   "issue": 56,
+   "url": "https://github.com/ie1405-scu/ie1405-scu.github.io/issues/56",
+   "title": "توزیع فایل همتابه‌همتا با BitTorrent",
+   "question": "چرا در BitTorrent هرچه تعداد دریافت‌کنندگان بیشتر شود، دانلود سریع‌تر می‌شود، برخلاف کلاینت–سرور؟",
+   "session": null,
+   "sources": [
+    [
+     "Kurose & Ross §2.5",
+     "https://gaia.cs.umass.edu/kurose_ross/index.php"
+    ],
+    [
+     "BEP 3",
+     "https://www.bittorrent.org/beps/bep_0003.html"
+    ]
+   ],
+   "proposed": false,
+   "by": null,
+   "at": null
   }
  ],
  "proposals": []

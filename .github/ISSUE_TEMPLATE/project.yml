@@ -1,0 +1,116 @@
+name: ثبت پروژهٔ درس مهندسی اینترنت
+description: ثبت ایده و اعضای گروه برای بررسی و پذیرش پروژه
+title: "پروژه: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        <div dir="rtl">
+
+        ## ثبت پروژه
+
+        - هر گروه دقیقاً سه عضو دارد.
+        - عنوان درخواست را بعد از «پروژه: » کامل کنید.
+        - اطلاعات هر سه عضو را وارد کنید.
+        - پس از ایجاد درخواست، فایل Pitch Deck را در قالب PDF در یک کامنت بارگذاری کنید.
+        - این درخواست و اطلاعات آن عمومی و برای همه قابل مشاهده است.
+        - ثبت درخواست به‌معنی تأیید پروژه نیست؛ منتظر بررسی مدرس بمانید.
+
+        **مهلت تحویل: ۱۸ آذر ۱۴۰۵**
+
+        </div>
+  - type: input
+    id: project_title
+    attributes:
+      label: عنوان پروژه
+      description: کوتاه، روشن و مشخص
+      placeholder: سامانهٔ ...
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: خلاصهٔ ایده
+      description: در چند جمله توضیح دهید چه چیزی می‌سازید و چرا.
+      placeholder: این پروژه برای حل مسئلهٔ ... طراحی شده است.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: مسئله و کاربران هدف
+      description: مسئله چیست و چه کسانی با آن مواجه‌اند؟
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: راه‌حل و قابلیت‌های اصلی
+      description: راه‌حل پیشنهادی و مهم‌ترین قابلیت‌های محصول را بنویسید.
+    validations:
+      required: true
+  - type: textarea
+    id: technology
+    attributes:
+      label: فناوری‌ها و طرح فنی اولیه
+      description: فناوری‌های احتمالی، اجزای اصلی و چالش‌های فنی را شرح دهید.
+    validations:
+      required: true
+  - type: input
+    id: member1
+    attributes:
+      label: عضو اول — نام و نام خانوادگی
+      placeholder: نام کامل
+    validations:
+      required: true
+  - type: input
+    id: github1
+    attributes:
+      label: عضو اول — نام کاربری GitHub
+      placeholder: username
+    validations:
+      required: true
+  - type: input
+    id: member2
+    attributes:
+      label: عضو دوم — نام و نام خانوادگی
+      placeholder: نام کامل
+    validations:
+      required: true
+  - type: input
+    id: github2
+    attributes:
+      label: عضو دوم — نام کاربری GitHub
+      placeholder: username
+    validations:
+      required: true
+  - type: input
+    id: member3
+    attributes:
+      label: عضو سوم — نام و نام خانوادگی
+      placeholder: نام کامل
+    validations:
+      required: true
+  - type: input
+    id: github3
+    attributes:
+      label: عضو سوم — نام کاربری GitHub
+      placeholder: username
+    validations:
+      required: true
+  - type: input
+    id: pdf_url
+    attributes:
+      label: پیوند فایل PDF (در صورت بارگذاری در فضای ابری)
+      description: اگر فایل را در فضای ابری قرار داده‌اید، پیوند مستقیم و قابل مشاهده را وارد کنید. در غیر این صورت پس از ایجاد درخواست، PDF را در یک کامنت پیوست کنید.
+      placeholder: https://...
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: تأیید نهایی
+      options:
+        - label: تأیید می‌کنم اطلاعات هر سه عضو با اطلاع و موافقت آن‌ها ثبت شده و می‌دانیم درخواست تا زمان تأیید مدرس پذیرفته‌شده نیست.
+          required: true
